@@ -96,4 +96,3 @@ This package uses the RCSB PDB REST API and was designed to assist in large-scal
 yaml
 ---
 
-Let me know if you’d like it adapted for an R package skeleton (with `DESCRIPTION`, `NAMESPACE`
