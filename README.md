@@ -1,83 +1,40 @@
-# RCSB Query Toolkit
+📦 RCSB Query Toolkit for R
+This package provides a streamlined interface to query the RCSB Protein Data Bank (PDB) via their RESTful API from R, with features including:
 
-This R package provides a convenient workflow to perform complex RCSB PDB searches using custom JSON queries, retrieve large datasets programmatically, and download associated structural data files (mmCIF or PDB). It supports retry logic for robust querying, includes progress indicators, and stores both the query and result metadata.
+Support for complex JSON-based queries
 
----
+Automatic pagination and retry logic
 
-## 📦 Features
+Verbose progress indicators
 
-- ✅ Load and submit pre-formatted RCSB JSON queries.
-- ✅ Automatically paginate to retrieve large result sets.
-- ✅ Retry logic for rate-limited queries.
-- ✅ Save metadata, PDB IDs, and query used.
-- ✅ Download mmCIF or PDB files for matching entries.
-- ✅ Progress bars for long-running tasks.
+Metadata storage
 
----
+Optional mmCIF/PDB structure downloads
 
-## 🔧 Installation
+Easy integration into larger R workflows
 
-This package is currently provided as source code. You can load it using `devtools`:
+🚀 Getting Started
+To run the package:
 
-```r
-# If not installed:
-install.packages("devtools")
+Navigate to the example workflow in inst/Example/
 
-# Load from local directory
-devtools::load_all("path/to/your/package")
+Load or adapt the sample query JSON provided in inst/Data/query_example.json
 
+Use the functions defined in the package to perform queries, download data, and store results.
 
-🚀 Quick Start
-1. Prepare your RCSB Query File
-Prepare a valid RCSB query in JSON format. For example:
+Example
+r
+Copy
+Edit
+# Load JSON query from file
+query_file <- system.file("Data", "query_example.json", package = "yourPackageName")
 
-json
-{
-  "query": {
-    "type": "terminal",
-    "service": "text",
-    "parameters": {
-      "attribute": "rcsb_entity_source_organism.taxonomy_lineage.id",
-      "operator": "exact_match",
-      "value": "9606"
-    }
-  },
-  "return_type": "entry",
-  "request_options": {
-    "paginate": {
-      "start": 0,
-      "rows": 1000
-    },
-    "results_content_type": ["experimental"]
-  }
-}
-Save it as query.json.
+# Run query
+results <- run_rcsb_query_from_file(query_file, result_dir = "results", download_structures = TRUE)
+📁 Directory Structure
+inst/Example/: Contains example R scripts demonstrating full usage of the package
 
-2. Run Query Workflow
-# Load the query from file and perform the request
-query_file <- "query.json"
-results <- run_query_from_file(query_file, verbose = TRUE)
-
-# Save results and metadata
-pdb_ids <- save_results(results, output_dir = "results", query_file = query_file)
-
-# Optionally download mmCIF files
-download_structures(pdb_ids, format = "cif", out_dir = "results/mmcif")
-📂 Output Files
-results/query_results.json: Full RCSB query result
-
-results/query_used.json: The query used
-
-results/pdb_ids.txt: All matching PDB IDs
-
-results/mmcif/: Directory of downloaded mmCIF files
-
-🔄 Functions
-run_query_from_file(query_file, ...) – Load JSON query, make request, retry if needed.
-
-save_results(result, output_dir, query_file) – Save metadata and PDB IDs.
-
-download_structures(pdb_ids, format, out_dir) – Download structures in specified format.
+inst/Data/: Contains sample JSON query files ready to use or modify
 
 📚 Dependencies
 httr
@@ -86,8 +43,9 @@ cli
 progress
 
 Install them via:
-
 install.packages(c("httr", "jsonlite", "cli", "progress"))
+
+
 📜 License
 MIT License
 
@@ -101,9 +59,12 @@ Haque, Neshatul, et al. "Systematic analysis of the relationship between fold-de
 
 Dsouza, Nikita R., et al. "Assessing Protein Surface-Based Scoring for Interpreting Genomic Variants." International Journal of Molecular Sciences 25.22 (2024): 12018.
 
+We kindly request you to acknowledge these in any publication or analysis that uses this toolkit.
+
+
 
 👩‍🔬 Acknowledgements
 This package uses the RCSB PDB REST API and was designed to assist in large-scale structure-based analyses such as protein modeling, residue mapping, and drug discovery workflows.
-yaml
+
 ---
 
