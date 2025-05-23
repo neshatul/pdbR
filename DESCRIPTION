@@ -1,0 +1,18 @@
+Package: pdbR
+Type: Package
+Title: Programmatic Querying and Data Retrieval from RCSB PDB
+Version: 0.1.0
+Authors@R: 
+    person("Neshatul", "Haque", email = c("nehaque@mcw.edu", neshathaq@gmail.com), role = c("aut", "cre"))
+Description: This package provides tools to query the RCSB Protein Data Bank using saved JSON queries, retrieve and parse results, and download mmCIF/PDB files. Includes retry logic, progress indicators, and metadata storage.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.4.2)
+Imports:
+    httr,
+    jsonlite,
+    cli,
+    progress,
+    utils
+RoxygenNote: 7.2.3
