@@ -91,6 +91,17 @@ install.packages(c("httr", "jsonlite", "cli", "progress"))
 📜 License
 MIT License
 
+
+📖 Citation
+If you use this tool in your research or analysis, please cite the following works that underlie the conceptual framework, utility, and structural reasoning motivating this toolkit:
+
+Haque, Neshatul, et al. "RAG genomic variation causes autoimmune diseases through specific structure-based mechanisms of enzyme dysregulation." Iscience 26.10 (2023).
+
+Haque, Neshatul, et al. "Systematic analysis of the relationship between fold-dependent flexibility and artificial intelligence protein structure prediction." PloS one 19.11 (2024): e0313308.
+
+Dsouza, Nikita R., et al. "Assessing Protein Surface-Based Scoring for Interpreting Genomic Variants." International Journal of Molecular Sciences 25.22 (2024): 12018.
+
+
 👩‍🔬 Acknowledgements
 This package uses the RCSB PDB REST API and was designed to assist in large-scale structure-based analyses such as protein modeling, residue mapping, and drug discovery workflows.
 yaml
