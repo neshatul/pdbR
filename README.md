@@ -1,17 +1,17 @@
-📦 RCSB Query Toolkit for R
-This package provides a streamlined interface to query the RCSB Protein Data Bank (PDB) via their RESTful API from R, with features including:
+# RCSB Query Toolkit for R
 
-Support for complex JSON-based queries
+This R package provides a convenient workflow to perform complex RCSB PDB searches using custom JSON queries, retrieve large datasets programmatically, and download associated structural data files (mmCIF or PDB). It supports retry logic for robust querying, includes progress indicators, and stores both the query and result metadata.
 
-Automatic pagination and retry logic
+---
 
-Verbose progress indicators
+## 📦 Features
 
-Metadata storage
-
-Optional mmCIF/PDB structure downloads
-
-Easy integration into larger R workflows
+✅Support for complex JSON-based queries
+✅Automatic pagination and retry logic
+✅Verbose progress indicators
+✅Metadata storage
+✅Optional mmCIF/PDB structure downloads
+✅Easy integration into larger R workflows
 
 🚀 Getting Started
 To run the package:
@@ -23,20 +23,21 @@ Load or adapt the sample query JSON provided in inst/Data/query_example.json
 Use the functions defined in the package to perform queries, download data, and store results.
 
 Example
-r
-Copy
-Edit
+
 # Load JSON query from file
 query_file <- system.file("Data", "query_example.json", package = "yourPackageName")
 
 # Run query
 results <- run_rcsb_query_from_file(query_file, result_dir = "results", download_structures = TRUE)
+
 📁 Directory Structure
+
 inst/Example/: Contains example R scripts demonstrating full usage of the package
 
 inst/Data/: Contains sample JSON query files ready to use or modify
 
 📚 Dependencies
+
 httr
 jsonlite
 cli
@@ -47,10 +48,12 @@ install.packages(c("httr", "jsonlite", "cli", "progress"))
 
 
 📜 License
+
 MIT License
 
 
 📖 Citation
+
 If you use this tool in your research or analysis, please cite the following works that underlie the conceptual framework, utility, and structural reasoning motivating this toolkit:
 
 Haque, Neshatul, et al. "RAG genomic variation causes autoimmune diseases through specific structure-based mechanisms of enzyme dysregulation." Iscience 26.10 (2023).
@@ -64,7 +67,5 @@ We kindly request you to acknowledge these in any publication or analysis that u
 
 
 👩‍🔬 Acknowledgements
+
 This package uses the RCSB PDB REST API and was designed to assist in large-scale structure-based analyses such as protein modeling, residue mapping, and drug discovery workflows.
-
----
-
