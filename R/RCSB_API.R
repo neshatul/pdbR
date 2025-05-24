@@ -2,6 +2,7 @@
 #' @param filepath Path to the JSON query file
 #' @return Parsed list object of the query
 #' @export
+#'
 read_query <- function(filepath) {
   jsonlite::fromJSON(filepath, simplifyVector = FALSE)
 }
@@ -11,6 +12,7 @@ read_query <- function(filepath) {
 #' @param retries Max retry attempts on failure
 #' @return Parsed result list
 #' @export
+#'
 submit_query <- function(query, retries = 5) {
   url <- "https://search.rcsb.org/rcsbsearch/v2/query"
   attempt <- 1
@@ -34,6 +36,7 @@ submit_query <- function(query, retries = 5) {
 #' @param output_dir Output directory
 #' @param query_file Path to original query file
 #' @export
+#'
 save_results <- function(result, output_dir = "results", query_file = NULL) {
   dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 
@@ -60,6 +63,7 @@ save_results <- function(result, output_dir = "results", query_file = NULL) {
 #' @param dest_dir Directory to store downloaded files
 #' @param verbose Show progress
 #' @export
+#'
 download_structures <- function(pdb_ids, format = "cif", dest_dir = "results/structures", verbose = TRUE) {
   dir.create(dest_dir, recursive = TRUE, showWarnings = FALSE)
   if (verbose) {

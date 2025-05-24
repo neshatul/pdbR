@@ -1,1 +1,109 @@
 .Rproj.user
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Example data files
+*.csv
+*.tsv
+*.xlsx
+
+# RStudio files
+.Rproj.user/
+*.Rproj
+
+# VSCode files
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.out
+*.aux
+*.toc
+*.nav
+*.snm
+
+# Compiled source
+*.o
+*.so
+*.dll
+
+# LaTeX files (for Rd2pdf manual building)
+*.tex
+*.pdf
+*.bbl
+*.blg
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+
+# Package build folders
+.Rcheck/
+.Rbuildignore
+packrat/
+renv/
+
+# Test and coverage files
+tests/testthat/_snaps/
+tests/testthat/_snaps/*/*.png
+tests/testthat/_snaps/*/*.pdf
+
+# Git files
+.git/
+.gitignore
+
+# CRAN submission files
+*.tar.gz
+
+# pkgdown website
+docs/
+_pkgdown.yml
+
+# Cache and generated docs
+man-roxygen/
+*.Rd
+
+# Executable scripts (optional if not tracking)
+# exec/
+
+# Python virtual env (if any)
+venv/
+.env/
+
+# Dependency management
+pipfile
+pipfile.lock
+poetry.lock
+pyproject.toml
+
+# Coverage reports
+coverage/
+*.cov
+
+# Build files
+build/
+dist/
+
+# Node.js files (if used in docs or dashboard)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Misc
+*.swp
+*.tmp
