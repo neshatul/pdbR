@@ -1,6 +1,9 @@
 #' Read JSON query from file
 #' @param filepath Path to the JSON query file
 #' @return Parsed list object of the query
+#'
+#' @importFrom jsonlite fromJSON
+#'
 #' @export
 #'
 read_query <- function(filepath) {
@@ -11,6 +14,11 @@ read_query <- function(filepath) {
 #' @param query List query object
 #' @param retries Max retry attempts on failure
 #' @return Parsed result list
+#'
+#' @importFrom httr status_code content POST
+#' @importFrom jsonlite fromJSON
+#' @importFrom cli  cli_alert_warning
+#'
 #' @export
 #'
 submit_query <- function(query, retries = 5) {
@@ -35,6 +43,9 @@ submit_query <- function(query, retries = 5) {
 #' @param result Parsed API result
 #' @param output_dir Output directory
 #' @param query_file Path to original query file
+#'
+#' @importFrom jsonlite write_json
+#'
 #' @export
 #'
 save_results <- function(result, output_dir = "results", query_file = NULL) {
@@ -62,6 +73,10 @@ save_results <- function(result, output_dir = "results", query_file = NULL) {
 #' @param format Either "cif" or "pdb"
 #' @param dest_dir Directory to store downloaded files
 #' @param verbose Show progress
+#'
+#' @importFrom progress progress_bar
+#' @importFrom cli cli_alert_danger
+#'
 #' @export
 #'
 download_structures <- function(pdb_ids, format = "cif", dest_dir = "results/structures", verbose = TRUE) {
